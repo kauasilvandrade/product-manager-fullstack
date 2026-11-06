@@ -1,0 +1,17 @@
+# .NET
+bin/
+obj/
+.vs/
+*.user
+
+# VS Code
+.vscode/
+
+# Configurações locais e segredos
+.env
+.env.*
+appsettings.Development.json
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db

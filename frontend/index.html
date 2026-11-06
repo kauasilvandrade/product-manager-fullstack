@@ -1,0 +1,120 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Produtos</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <div class="brand">
+                <span class="brand-icon">P</span>
+                <span>ProductManager</span>
+            </div>
+            <span class="header-tag">Sistema de Estoque</span>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="page-heading">
+            <h1>Gerenciamento de Produtos</h1>
+            <p>Cadastre e gerencie os produtos da sua loja.</p>
+        </section>
+
+        <section class="card">
+            <div class="card-heading">
+                <h2>Cadastrar produto</h2>
+                <p>Preencha os dados do produto abaixo.</p>
+            </div>
+
+            <form id="form-produto">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="nome">Nome do produto</label>
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Ex.: Teclado mecânico"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="preco">Preço (R$)</label>
+                        <input
+                            type="number"
+                            id="preco"
+                            name="preco"
+                            placeholder="0.00"
+                            min="0"
+                            step="0.01"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label for="estoque">Quantidade em estoque</label>
+                        <input
+                            type="number"
+                            id="estoque"
+                            name="estoque"
+                            placeholder="0"
+                            min="0"
+                            step="1"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn btn-primary">
+                        + Cadastrar produto
+                    </button>
+                </div>
+            </form>
+
+            <p id="mensagem" class="mensagem" role="status" aria-live="polite"></p>
+        </section>
+
+        <section class="card">
+            <div class="list-heading">
+                <div>
+                    <h2>Produtos cadastrados</h2>
+                    <p>Visualize e gerencie seu estoque.</p>
+                </div>
+                <span id="total-produtos" class="counter">0 produtos</span>
+            </div>
+
+            <div class="table-wrapper">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Produto</th>
+                            <th>Preço</th>
+                            <th>Estoque</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-produtos">
+                        <tr>
+                            <td colspan="5" class="empty-state">
+                                Nenhum produto cadastrado.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>ProductManager • Projeto Full Stack</p>
+    </footer>
+</body>
+</html>
